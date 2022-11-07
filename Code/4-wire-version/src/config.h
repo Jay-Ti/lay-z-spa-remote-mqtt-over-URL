@@ -101,6 +101,9 @@ IPAddress ip4DnsSecondary(8,8,4,4);
 bool useMqtt = false;
 /** get or set the MQTT server IP address */
 IPAddress mqttIpAddress(192,168,0,20);
+/** define if you want to use a URL instead of an IP Address*/
+bool usehost =true;  
+String mqttHostname= "testURL.com"
 /** get or set the MQTT server port */
 int mqttPort = 1883;
 /** get or set the MQTT server username */
