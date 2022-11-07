@@ -1243,6 +1243,16 @@ void mqttConnect()
   {
     return;
   }
+  if(usehost){
+    ESP.wdtFeed();
+    if(WiFi.hostByName(mqttHostname.c_str(),mqttIpAddress)){ 
+   	Serial.println("Host has been reached by URL");
+    }
+   else{
+    Serial.println("Host has not been reached by URL");
+    return;
+   }
+  }
 
   Serial.print(F("MQTT > Connecting ... "));
   // We'll connect with a Retained Last Will that updates the 'Status' topic with "Dead" when the device goes offline...
